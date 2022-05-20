@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --right-bg-color: rgba(12, 54, 72, 0.7);
+    --left-bg-color: rgba(32, 25, 22, 0.7);
+
+    --right-btn-color: rgba(12, 54, 72, 1);
+    --left-btn-color: rgba(32, 25, 22, 1);
+
+    --hover-width: 75%;
+    --other-width: 25%;
+
+    --speed: 1000ms;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    overflow: hidden;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 3rem;
+    position: absolute;
+    color: white;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.btn {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1rem;
+    border: 2px solid #fff;
+    width: 15rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .9;
+    padding: 1.3rem 0;
+    text-decoration: none;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+}
+
+.split.left {
+    left: 0;
+    background: #aaa url('//picsum.photos/id/93/1920/720');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.left::before {
+    content: '';
+    position: absolute;
+    background-color: var(--left-bg-color);
+    width: 100%;
+    height: 100%;
+}
+
+.split.left .btn:hover {
+    background-color: var(--left-btn-color);
+    border-color: var(--left-btn-color);
+}
+
+.split.right {
+    right: 0;
+    background: #555 url('//picsum.photos/id/423/1920/720');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.right::before {
+    content: '';
+    position: absolute;
+    background-color: var(--right-bg-color);
+    width: 100%;
+    height: 100%;
+}
+
+.split.right .btn:hover {
+    background-color: var(--right-btn-color);
+    border-color: var(--right-btn-color);
+}
+
+.split.left::before,
+.split.left,
+.split.right::before,
+.split.right {
+    transition: all var(--speed) ease-in;
+
+}
+
+.hover-left .left {
+    width: var(--hover-width);
+}
+
+.hover-left .right {
+    width: var(--other-width);
+}
+
+.hover-right .left {
+    width: var(--other-width);
+}
+
+.hover-right .right {
+    width: var(--hover-width);
+}
+
+@media(max-width: 800px) {
+    h1 {
+        font-size: 2.3rem;
+        top: 27%;
+    }
+
+    .btn {
+        font-size: .9rem;
+        padding: 1rem 0;
+        width: 10rem;
+    }
+}
