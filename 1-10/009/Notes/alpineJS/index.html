@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      [x-cloak] {
+        display: none;
+      }
+    </style>
+    <title>Alpine JS</title>
+  </head>
+  <body>
+    <div class="container mx-auto mt-6 max-w-sm">
+      <h1 class="font-bold text-5xl mb-4">Hello Alpine!</h1>
+
+      <!-- x-data alpine component -->
+      <div
+        x-data="{
+        open: false,
+        name: 'Mink',
+        search: 'IceCream',
+        posts: [
+        {title: 'Post One'},
+        {title: 'Post Two'},
+        {title: 'Post Three'},
+        {title: 'Post Four'},
+        ]
+      }"
+      >
+        <!-- x-on & x-bind -->
+        <button
+          x-on:click="open = !open"
+          x-bind:class="open ? 'bg-blue-800' : ''"
+          class="bg-slate-700 text-white px-4 py-3 rounded-xl"
+        >
+          Toggle
+        </button>
+
+        <!-- x-show component -->
+        <div x-show="open" x-cloak x-transition>
+          <p class="bg-gray-200 p-4 my-6 rounded">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
+            aut beatae, vel perspiciatis excepturi nobis repellendus eaque, est
+            autem dicta provident velit.
+          </p>
+        </div>
+
+        <!-- Text x-text -->
+        <div class="my-4">
+          The value of name is <span x-text="name" class="font-bold"></span>
+        </div>
+
+        <!-- x-effect -->
+        <div x-effect="console.log(open)"></div>
+
+        <!-- x-model -->
+        <input
+          type="text"
+          class="border p-2 w-full mb-2 mmt-6"
+          placeholder="search for..."
+        />
+        <p>
+          <span class="font-bold"> Search for: </span>
+          <span x-text="search"></span>
+        </p>
+
+        <!-- x-if -->
+        <template x-if="open">
+          <div class="bg-gray-50 p-2 mt-5">Template based on condition</div>
+        </template>
+
+        <!-- x-for -->
+        <div class="bg-red-100 p-4 mt-4">
+          <h2 class="text-2xl mt-2 mb-4 font-bold">Posts</h2>
+          <template x-for="post in posts">
+            <div x-text="post.title"></div>
+          </template>
+          <button
+            @click="posts.push({title: 'New Post'})"
+            class="bg-blue-800 text-white px-4 py-2 rounded-lg mt-4"
+          >
+            Add Post
+          </button>
+
+          <div class="mt-6">
+            <!-- x-ref -->
+            <div x-ref="text">Hello</div>
+            <button
+              @click="$refs.text.remove()"
+              class="bg-black text-white p-2 rounded-lg"
+            >
+              Click
+            </button>
+          </div>
+
+          <!-- x-html -->
+          <div x-html="(await axios.get('./partial.html')).data">...</div>
+
+          <!-- $el -->
+          <button
+            @click="$el.innerHTML='Hello World'"
+            class="mt-2 p-4 border bg-red-500 text-white"
+          >
+            Replace text
+          </button>
+
+          <!-- x-init -->
+          <div x-init="$watch('posts', value=>console.log(value))"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
