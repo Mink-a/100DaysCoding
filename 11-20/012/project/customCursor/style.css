@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+.cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  background-color: #c4f74e;
+  border-radius: 50%;
+}
+
+.cursor__follower {
+  width: 6px;
+  height: 6px;
+  transition: all .4s ease;
+}
+
+html {
+  cursor: none;
+  background-color: #6c6e72;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-family: "Anton";
+  font-size: 5rem;
+  letter-spacing: .8rem;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h1 span {
+  letter-spacing: 1rem;
+  color: #943a50;
+}
