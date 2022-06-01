@@ -14,25 +14,34 @@
     <title>Password Visibility</title>
   </head>
   <body class="bg-gray-200">
-    <form class="h-screen flex flex-col justify-center items-center space-y-4">
+    <form
+      class="h-screen flex flex-col justify-center items-center space-y-4 w-1/2 mx-auto"
+    >
+      <h1
+        class="font-bold text-3xl mb-12 uppercase tracking-wider text-indigo-600"
+      >
+        password visibility
+      </h1>
       <input
         type="text"
         placeholder="username"
         class="w-1/2 px-3 py-2 rounded focus:outline-indigo-400"
       />
 
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="password"
-        class="px-3 py-2 rounded focus:outline-indigo-400 relative w-1/2"
-      />
-      <div class="absolute top-[46%] right-[27%]">
-        <i
-          id="eye"
-          class="fa-solid fa-eye text-gray-400 active:text-gray-700"
-        ></i>
+      <div class="password w-1/2 relative">
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="password"
+          class="px-3 py-2 rounded focus:outline-indigo-400 w-full"
+        />
+        <div class="absolute top-2 right-4">
+          <i
+            id="eye"
+            class="fa-solid fa-eye text-gray-400 active:text-gray-700"
+          ></i>
+        </div>
       </div>
       <button
         class="bg-indigo-500 text-white w-1/2 px-3 py-2 rounded capitalize focus:ring focus:ring-indigo-400 focus:outline-none focus:ring-offset-2"
