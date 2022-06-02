@@ -1,0 +1,9 @@
+.gift:hover .hat {
+  top: -100px;
+  transform: rotateZ(10deg);
+  left: 10px;
+}
+
+.gift:hover .promo {
+  top: -80px;
+}
