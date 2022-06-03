@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+  font-family: "Raleway";
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #537edb;
+}
+
+.container {
+  width: 370px;
+  border-radius: 7px;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.container header {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.container form {
+  margin: 35px 0 20px;
+}
+
+form .row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+form .row label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+form :where(textarea, select, button) {
+  outline: none;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+
+form .row textarea {
+  resize: none;
+  height: 110px;
+  width: 94%;
+  padding: 8px 10px;
+  color: #333333;
+  border: 1px solid gray;
+}
+
+form .row .outer {
+  height: 47px;
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+form .row select {
+  font-size: 14px;
+  background-color: #fff;
+
+}
+
+form button {
+  height: 52px;
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #537edb;
+}
