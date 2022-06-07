@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'roboto';
+  margin: 0;
+  height: 100vh;
+  background-color: #f1eaff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 300px;
+
+}
+
+.title {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  display: inline-block;
+  margin: 5px 0 20px;
+  opacity: 0.8;
+}
+
+.header {
+  background-color: indigo;
+  color: #fff;
+  padding: 30px 20px;
+
+}
+
+.header input {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 0;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 14px;
+  width: 100%;
+}
+
+.header input:focus {
+  outline: none;
+}
+
+.user-list {
+  background-color: #fff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+
+}
+
+.user-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+
+}
+
+.user-list img {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.user-list .user-info h4 {
+  margin-bottom: 5px;
+}
+
+.user-list .user-info p {
+  font-size: 0.8rem;
+}
+
+.user-list li:not(:last-of-type) {
+  border-bottom: 1px solid #ede;
+}
+
+.user-list li.hide {
+  display: none;
+}
