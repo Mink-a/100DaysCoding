@@ -42,18 +42,25 @@ header p {
 }
 
 .inputs button {
+  opacity: 0.5;
   width: 100%;
   padding: 10px;
   background-color: skyblue;
   border: none;
   font-size: 1rem;
   margin-bottom: 1rem;
+  pointer-events: none;
 }
 
-.inputs p {
+.inputs button.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.info-txt {
   display: none;
 }
 
-p .info-txt {
+.info-txt span {
   color: skyblue;
 }
